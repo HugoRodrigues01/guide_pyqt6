@@ -30,6 +30,11 @@ class ModelTableView(QtCore.QAbstractTableModel):
 
         # Return the string of data
         if role == QtCore.Qt.ItemDataRole.DisplayRole:
+
+            if isinstance(data, datetime.date):
+                # return data formating for date brazil
+                return str(data.strftime("%d/%m/%Y"))
+
             return str(data)
 
 
