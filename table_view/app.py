@@ -8,13 +8,13 @@ TITLE_WINDOW: str = "TableWidget Window"
 MIN_WIDTH: int = 500
 MIN_HEIGHT: int = 300
 DATA: list = [
-    ["Hugo", 70.5, "M", datetime.datetime(2004, 2, 14).date()],
-    ["Juliana", 45.5, "F", datetime.datetime(2007, 10, 20).date()],
-    ["Marcos", 67.45, "M", datetime.datetime(1999, 4, 23).date()],
-    ["Firmina", 65.2, "F", datetime.datetime(2006, 6, 10).date()]
+    ["Hugo", 70.5, "M", datetime.datetime(2004, 2, 14).date(), True],
+    ["Juliana", 45.5, "F", datetime.datetime(2007, 10, 20).date(), False],
+    ["Marcos", 67.45, "M", datetime.datetime(1999, 4, 23).date(), False],
+    ["Firmina", 65.2, "F", datetime.datetime(2006, 6, 10).date(), True]
 ]
-HORIZONTAL_HEADER_LABELS: list = ["Nome", "Peso", "Sexo", "Data Nascimento"]
-VERTICAL_HEADER_LABELS: list = [1, 2, 3, 4]
+HORIZONTAL_HEADER_LABELS: list = ["Nome", "Peso", "Sexo", "Data Nascimento", "Validado"]
+VERTICAL_HEADER_LABELS: list = [1, 2, 3, 4, 5]
 
 
 class MainWindow(QtWidgets.QMainWindow):
