@@ -1,3 +1,6 @@
+commonmark==0.9.1
+Pygments==2.11.2
 PyQt6==6.2.3
 PyQt6-Qt6==6.2.3
 PyQt6-sip==13.2.1
+rich==12.0.0
