@@ -37,6 +37,31 @@ class ModelTableView(QtCore.QAbstractTableModel):
 
             return str(data)
 
+        if role == QtCore.Qt.ItemDataRole.ForegroundRole:
+
+            if (type(data) == float or type(data) == int):
+
+                if 0 < data <= 50:
+                    # return red
+                    return QtGui.QColor("#f00")
+                
+                elif data > 50:
+                    # return blue
+                    return QtGui.QColor("#00f")
+
+        # icon data of table view
+        if role == QtCore.Qt.ItemDataRole.DecorationRole:
+            
+            if isinstance(data, datetime.date):
+                return QtGui.QIcon(ICONS_PATH + "/calendario.png")
+
+            elif isinstance(data, bool):
+
+                if data:
+                    return QtGui.QIcon(ICONS_PATH + "/confirme.png")
+                
+                else:
+                    return QtGui.QIcon(ICONS_PATH + "/botao-de-menos.png")
 
     def rowCount(self, index = ...) -> int:
         return len(self._data)
