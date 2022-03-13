@@ -1,4 +1,7 @@
 from PyQt6 import QtWidgets, QtCore, QtGui
+import datetime
+
+ICONS_PATH: str = "../icons"
 
 
 class ModelTableView(QtCore.QAbstractTableModel):
