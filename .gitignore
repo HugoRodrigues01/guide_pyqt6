@@ -1,1 +1,5 @@
-tree_view
+# Ignore all the extensions of file
+*.pyc
+
+# Ignore the tree view 
+tree_view/
