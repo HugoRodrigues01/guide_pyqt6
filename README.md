@@ -1,6 +1,9 @@
+![image](https://img.shields.io/github/repo-size/HugoRodrigues01/guide_pyqt6?style=for-the-badge "size")
+![image](https://img.shields.io/github/license/HugoRodrigues01/guide_pyqt6?style=for-the-badge "license")
+
 # Guide PyQt6
 
-This repository teach about __PyQt6__ framework. You learn to create windows, tables, graphics, end more about __PyQt6__, you can create your own repositorys into this, and learn theaching __PyQt__.
+This repository teach about __PyQt6__ framework. You learn to create windows, tables, graphics, end more about __PyQt6__, you can create your own repositoreis into this, and learn theaching __PyQt__.
 
 ## How create your own repository
 
