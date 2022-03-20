@@ -4,7 +4,7 @@ from tray_icon import SystemTrayIcon
 
 
 TITLE_WINDOW: str = "SystemTrayIcon Window"
-MIN_WIDH: int = 500
+MIN_WIDTH: int = 500
 MIN_HEIGHT: int = 300
 
 
@@ -37,7 +37,7 @@ class MainWindow(QtWidgets.QMainWindow):
     def create_window(self) -> None:
 
         self.setWindowTitle(TITLE_WINDOW)
-        self.setMinimumSize(MIN_WIDH, MIN_HEIGHT)
+        self.setMinimumSize(MIN_WIDTH, MIN_HEIGHT)
         self.setCentralWidget(self.container)
         self.show()
     
