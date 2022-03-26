@@ -1,6 +1,11 @@
 from PyQt6 import QtWidgets, QtCore, QtGui
+import os
 
-ICONS_PATH: str = "../icons"
+# ATENTION!!, the images or icons of code just loaded, if run of python code
+# was in guide_pyqt6 directory
+
+# (venv) zero-two@zerotwo:~/Documentos/python-pyqt/guide_pyqt6$ python pyqt6/dir_widget_name/app.py
+ICONS_PATH: str = os.curdir + "/icons"
 
 
 class SystemTrayIcon:
