@@ -1,10 +1,11 @@
 from PyQt6 import QtWidgets, QtGui, QtCore
 import sys
+from widgets_ui import WidgetsUIWidgets
 
 
 TITLE_WINDOW: str = "Widgets Window"
-MIN_WIDTH: int = 500
-MIN_HEIGHT: int = 300
+MIN_WIDTH: int = 700
+MIN_HEIGHT: int = 350
 
 
 class MainWindow(QtWidgets.QMainWindow):
@@ -27,6 +28,7 @@ class MainWindow(QtWidgets.QMainWindow):
         # load the dependences
         #-------------------------------------------------
         self.create_widgets_ui()
+        self.load_widgets_ui()
         #-------------------------------------------------
 
         # loading the window
@@ -66,19 +68,13 @@ class MainWindow(QtWidgets.QMainWindow):
         self.button.pressed.connect(lambda: self.write_plain_text("Button", "Button was pressed"))
         #-------------------------------------------------
 
-        # SLIDER
+        # SCROLL AREA
         #-------------------------------------------------
-        self.slider: QtWidgets.QSlider = QtWidgets.QSlider()
+        self.scroll_area: QtWidgets.QScrollArea = QtWidgets.QScrollArea()
 
-        # decoration above of slider
-        self.slider.setTickPosition(QtWidgets.QSlider.TickPosition.TicksAbove)
-
-        # range of slider
-        self.slider.setMinimum(-100)
-        self.slider.setMaximum(100)
-
-        # initial possition of slider
-        self.slider.setSliderPosition(0)
+        self.scroll_area.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarPolicy.ScrollBarAsNeeded)
+        self.scroll_area.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarPolicy.ScrollBarAsNeeded)
+        self.scroll_area.setWidgetResizable(True)
         #-------------------------------------------------
 
         # LAYOUT FRAME WIDGETS
@@ -93,7 +89,7 @@ class MainWindow(QtWidgets.QMainWindow):
         #-------------------------------------------------
         self.frame_widget_layout.addWidget(self.label_frame_widget)
         self.frame_widget_layout.addWidget(self.button)
-        self.frame_widget_layout.addWidget(self.slider)
+        self.frame_widget_layout.addWidget(self.scroll_area)
         #-------------------------------------------------
 
         # LABEL FRAME ANSWERS
@@ -149,9 +145,20 @@ class MainWindow(QtWidgets.QMainWindow):
     
     def write_plain_text(self, title: str, text: str) -> None:
 
-        self.text_edit_info.append("-" * 70)
+        self.text_edit_info.append("-" * 50)
         self.text_edit_info.append(f"<span style='color: red;'>{title}</span> <br> {text}")
-        self.text_edit_info.append("-" * 70)
+        self.text_edit_info.append("-" * 50)
+
+    def load_widgets_ui(self) -> None:
+
+        self.widget_container: QtWidgets.QWidget = QtWidgets.QWidget()
+
+        # Loading the widgets and created it
+        self.widgets = WidgetsUIWidgets(self.widget_container, self, self.write_plain_text)
+        self.widgets.create_widgets_ui()
+
+        # insert the container of widgets into the scroll area
+        self.scroll_area.setWidget(self.widget_container)
 
 
 if __name__ == "__main__":
