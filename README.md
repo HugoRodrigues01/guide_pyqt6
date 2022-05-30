@@ -58,7 +58,7 @@ __README Pattern__
 - Description: Description of widget
 - Autor: Yout full name
 
-Exemple of README pattern [readme pattern](./table_view/README.md)
+Exemple of README pattern [readme pattern](./pyqt6/table_view/README.md)
 
 ### Number 5
 Make a pull request
@@ -67,7 +67,7 @@ Make a pull request
 If you use any library in you repository please, create a requerentes.txt file
 
 	pip freeze > requerentes.txt
-	
+
 ### OBS
 This repository was created fo linux platform and can have some problems with windows platform.
 
